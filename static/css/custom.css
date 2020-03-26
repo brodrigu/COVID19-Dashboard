@@ -1,0 +1,18 @@
+.pointer {
+    cursor: pointer;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.product-details {
+    height: 162px;
+    overflow-y: scroll;
+    margin-top: 5px;
+    white-space: pre-wrap;
+}
+
+.btn-toolbar>.btn {
+    margin-left: 45px;
+}
