@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -47,8 +48,8 @@ const useStyles = makeStyles(theme => ({
         paddingRight: 24, // keep right padding when drawer closed
     },
     toolbarIcon: {
-        display: 'flex',
         alignItems: 'center',
+        display: 'flex',
         justifyContent: 'flex-end',
         padding: '0 8px',
         ...theme.mixins.toolbar,
