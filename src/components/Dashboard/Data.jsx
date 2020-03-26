@@ -48,7 +48,7 @@ export default function Orders() {
                 </TableBody>
             </Table>
             <div className={classes.seeMore}>
-                <Link color="primary" href="#" onClick={preventDefault}>
+                <Link color="primary" href="#foo" onClick={preventDefault}>
                     See more data
                 </Link>
             </div>
