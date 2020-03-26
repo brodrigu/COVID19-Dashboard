@@ -1,0 +1,114 @@
+{
+  "name": "covid-modeling-application",
+  "version": "1.0.0",
+  "description": "COVID-19 Modeling Application",
+  "scripts": {
+    "dist": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --hot --open --config webpack.dev.js --port 8081",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint-fix": "eslint src --fix --ext .js,.jsx",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brodrigu/covid-model.git"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint && npm test"
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "testURL": "file:/"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "mobx",
+    "starter-kit"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brodrigu/covid-model/issues"
+  },
+  "homepage": "https://github.com/brodrigu/covid-model",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^7.5.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.1.2",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-babel-module": "^5.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
+    "jest": "^24.7.1",
+    "redux-mock-store": "^1.5.3",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.0.0",
+    "@opentok/client": "^2.16.2",
+    "amazon-product-api": "^0.4.4",
+    "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
+    "clsx": "^1.1.0",
+    "history": "^4.7.2",
+    "lodash.debounce": "^4.0.8",
+    "material-ui-superselectfield": "^1.10.0",
+    "mdi-material-ui": "^6.2.0",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
+    "randomcolor": "^0.5.3",
+    "rc-calendar": "^9.7.10",
+    "react": "^16.9.0",
+    "react-big-calendar": "^0.22.0",
+    "react-bootstrap": "^0.32.4",
+    "react-datepicker": "^1.6.0",
+    "react-dom": "^16.4.1",
+    "react-modal": "^3.6.1",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-select": "^2.1.0",
+    "react-stripe-elements": "^4.0.0",
+    "react-table": "^6.8.6",
+    "react-youtube": "^7.6.0",
+    "recharts": "^1.8.5",
+    "redux": "^4.0.4",
+    "redux-actions": "^2.6.5",
+    "redux-saga": "^1.0.5",
+    "screenfull": "^4.2.1",
+    "store2": "^2.8.0",
+    "whatwg-fetch": "^3.0.0",
+    "youtube-player": "^5.5.0"
+  }
+}

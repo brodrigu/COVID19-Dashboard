@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPage Actions setActiveTab test 1`] = `
+Array [
+  Object {
+    "type": "VideoPage/setActiveTab",
+  },
+]
+`;
+
+exports[`VideoPage Actions setDisplayedProduct test 1`] = `
+Array [
+  Object {
+    "type": "VideoPage/setDisplayedProduct",
+  },
+]
+`;
+
+exports[`VideoPage Reducers initial state 1`] = `
+Object {
+  "activeTab": 1,
+  "displayedProduct": Object {},
+}
+`;
+
+exports[`VideoPage Reducers setActiveTab 1`] = `
+Object {
+  "activeTab": 8,
+  "displayedProduct": Object {},
+}
+`;
+
+exports[`VideoPage Reducers setDisplayedProduct 1`] = `
+Object {
+  "activeTab": 1,
+  "displayedProduct": "myProduct",
+}
+`;

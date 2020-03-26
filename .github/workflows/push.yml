@@ -1,0 +1,37 @@
+name: Continuous Integration
+on: push
+
+jobs:
+  install:
+    name: Install 🔧
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+  lint:
+    name: Lint 🧹
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    name: Test 🧪
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm test
