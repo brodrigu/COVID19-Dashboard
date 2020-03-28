@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { all } from 'redux-saga/effects';
 
-import Errors from './Errors';
+import ModelParameters from './ModelParameters';
 
 export default combineReducers({
-    Errors,
+    ModelParameters,
 });
 
 export function* localStateSagas() {

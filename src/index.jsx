@@ -13,6 +13,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import store from '~app/store';
 
 import { calculateModelData } from '~ducks/data/model';
+import { requestHistoricalData } from '~ducks/data/history';
 
 import Dashboard from '~components/Dashboard/Home';
 import themeJson from './theme.json';
@@ -28,7 +29,8 @@ render((
                     <Route
                         path="/"
                         render={() => {
-                            store.dispatch(calculateModelData());
+                            store.dispatch(requestHistoricalData());
+                            store.dispatch(calculateModelData({}));
                             return (
                                 <Dashboard />
                             );

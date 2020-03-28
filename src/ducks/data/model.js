@@ -16,8 +16,8 @@ export default handleActions({
 // Sagas
 
 // list
-export function* workCalculateModelData() {
-    yield put(updateModelData(calculateData({ daysToCalculate: 100 })));
+export function* workCalculateModelData({ payload }) {
+    yield put(updateModelData(calculateData(payload)));
 }
 export function* watchCalculateModelData() {
     yield takeEvery([calculateModelData], workCalculateModelData);
