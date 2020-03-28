@@ -31,9 +31,9 @@ export default function Orders() {
                 <TableHead>
                     <TableRow>
                         <TableCell>Date</TableCell>
-                        <TableCell>newlyInfected</TableCell>
-                        <TableCell>icuAdmitted</TableCell>
-                        <TableCell>currentlyInfected</TableCell>
+                        <TableCell align="right">newlyInfected</TableCell>
+                        <TableCell align="right">icuAdmitted</TableCell>
+                        <TableCell align="right">currentlyInfected</TableCell>
                         <TableCell align="right">cumulativeDeaths</TableCell>
                     </TableRow>
                 </TableHead>
