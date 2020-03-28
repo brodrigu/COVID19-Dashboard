@@ -77,11 +77,11 @@ export const calculateData = ({
     icuRequirementRate = 0.05,
     daysUntilIcuEntry = 14,
     daysUntilIcuExit = 21,
+    virusDoublingDays = 5,
     totalIcuBeds = 84000,
     // daysUntilRecovery = 28,
-    daysToCalculate = 20,
+    daysToCalculate = 1000,
 }) => {
-    const virusDoublingDays = 5;
     const daysInIcu = daysUntilIcuExit - daysUntilIcuEntry;
     const daysInIcuUntilDeath = daysUntilMorbidity - daysUntilIcuEntry;
     const day0 = {
@@ -95,7 +95,7 @@ export const calculateData = ({
         icuAdmitted: 0,
         icuBedProbability: 1,
         // @todo make this an input
-        infectionsPassedPerPersonDay: calculateInfectionsPassedPerPersonDay(5),
+        infectionsPassedPerPersonDay: calculateInfectionsPassedPerPersonDay(virusDoublingDays),
         newIcuCases: 0,
         newIcuDeaths: 0,
         newIcuRejects: 0,
@@ -108,7 +108,7 @@ export const calculateData = ({
         percentImmuneOrInfected: 0,
         totalImmune: 0,
         totalSymptomatic: 0,
-        virusDoublingDays: 5,
+        virusDoublingDays,
     };
 
     const data = [day0];
@@ -118,7 +118,9 @@ export const calculateData = ({
 
         const percentImmuneOrInfected = calculatePercentImmuneOrInfected(lastDay);
 
-        const infectionsPassedPerPersonDay = calculateInfectionsPassedPerPersonDay(5);
+        const infectionsPassedPerPersonDay = calculateInfectionsPassedPerPersonDay(
+            virusDoublingDays,
+        );
 
         const newlyInfected = calculateNewlyInfected(
             lastDay.currentlyInfected,

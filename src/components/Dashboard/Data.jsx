@@ -19,6 +19,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+const formatter = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 2 });
+
 export default function Orders() {
     const classes = useStyles();
     const model = useSelector(state => state.data.model);
@@ -36,13 +38,13 @@ export default function Orders() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {model.map(row => (
+                    {model.slice(0).reverse().map(row => (
                         <TableRow key={row.day}>
                             <TableCell>{row.date}</TableCell>
-                            <TableCell>{row.newlyInfected}</TableCell>
-                            <TableCell>{row.icuAdmitted}</TableCell>
-                            <TableCell>{row.currentlyInfected}</TableCell>
-                            <TableCell align="right">{row.cumulativeDeaths}</TableCell>
+                            <TableCell align="right">{formatter.format(row.newlyInfected)}</TableCell>
+                            <TableCell align="right">{formatter.format(row.icuAdmitted)}</TableCell>
+                            <TableCell align="right">{formatter.format(row.currentlyInfected)}</TableCell>
+                            <TableCell align="right">{formatter.format(row.cumulativeDeaths)}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
