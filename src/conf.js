@@ -1,8 +1,18 @@
 const conf = {
-    apiBaseUrl: process.env.BESTOKE_API_ROOT || 'https://api.bestoke.co',
-    loginUrl: process.env.BESTOKE_LOGIN_ROOT || 'https://login.bestoke.co',
-    stripePublicKey: process.env.STRIPE_PUBLIC_KEY || 'pk_test_KYBfBAXB4UaphlcY6DVeXkKu',
-    tokboxApiKey: process.env.TOK_API_KEY || '46398402',
+    modelDefaults: {
+        daysToCalculate: 1000,
+        daysUntilIcuEntry: 14,
+        daysUntilIcuExit: 21,
+        daysUntilMorbidity: 16,
+        daysUntilRecovery: 28,
+        daysUntilSymptoms: 5,
+        icuRequirementRate: 0.05,
+        initialInfectionCount: 50,
+        morbidityRate: 0.03,
+        population: 327000000,
+        totalIcuBeds: 84000,
+        virusDoublingDays: 5,
+    },
 };
 
 export default conf;
