@@ -1,4 +1,5 @@
 import moment from 'moment';
+import conf from '../conf';
 
 const calculatePercentImmuneOrInfected = ({
     currentlyInfected,
@@ -69,18 +70,17 @@ const calculateIcuBedProbability = (
 ) => (newIcuCases < availableIcuBeds ? 1 : availableIcuBeds / newIcuCases);
 
 export const calculateData = ({
-    population = 327000000,
-    initialInfectionCount = 50,
-    daysUntilSymptoms = 5,
-    daysUntilMorbidity = 16,
-    morbidityRate = 0.03,
-    icuRequirementRate = 0.05,
-    daysUntilIcuEntry = 14,
-    daysUntilIcuExit = 21,
-    virusDoublingDays = 5,
-    totalIcuBeds = 84000,
-    // daysUntilRecovery = 28,
-    daysToCalculate = 1000,
+    population = conf.modelDefaults.population,
+    initialInfectionCount = conf.modelDefaults.initialInfectionCount,
+    daysUntilSymptoms = conf.modelDefaults.daysUntilSymptoms,
+    daysUntilMorbidity = conf.modelDefaults.daysUntilMorbidity,
+    morbidityRate = conf.modelDefaults.morbidityRate,
+    icuRequirementRate = conf.modelDefaults.icuRequirementRate,
+    daysUntilIcuEntry = conf.modelDefaults.daysUntilIcuEntry,
+    daysUntilIcuExit = conf.modelDefaults.daysUntilIcuExit,
+    virusDoublingDays = conf.modelDefaults.virusDoublingDays,
+    totalIcuBeds = conf.modelDefaults.totalIcuBeds,
+    daysToCalculate = conf.modelDefaults.daysToCalculate,
 }) => {
     const daysInIcu = daysUntilIcuExit - daysUntilIcuEntry;
     const daysInIcuUntilDeath = daysUntilMorbidity - daysUntilIcuEntry;

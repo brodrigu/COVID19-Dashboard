@@ -38,7 +38,7 @@ export default function Orders() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {model.slice(0).reverse().map(row => (
+                    {model.slice(0).map(row => (
                         <TableRow key={row.day}>
                             <TableCell>{row.date}</TableCell>
                             <TableCell align="right">{formatter.format(row.newlyInfected)}</TableCell>
