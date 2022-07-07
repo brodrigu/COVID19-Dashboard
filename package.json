@@ -85,7 +85,7 @@
     "lodash.debounce": "^4.0.8",
     "material-ui-superselectfield": "^1.10.0",
     "mdi-material-ui": "^6.2.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "prop-types": "^15.6.2",
     "randomcolor": "^0.5.3",
     "rc-calendar": "^9.7.10",
