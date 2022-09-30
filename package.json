@@ -102,7 +102,7 @@
     "react-stripe-elements": "^4.0.0",
     "react-table": "^6.8.6",
     "react-youtube": "^7.6.0",
-    "recharts": "^1.8.5",
+    "recharts": "^2.1.14",
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "redux-saga": "^1.0.5",
